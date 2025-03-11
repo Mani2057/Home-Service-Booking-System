@@ -1,0 +1,18 @@
+Create a New Project Folder-->
+    mkdir Home Service Booking System
+Initialize a Node.js Project-->
+    npm init -y
+    this will create a package.json file in project Folder
+Installing required packages-->
+    npm install express ejs mongoose dotenv body-parser
+    express--> web framework for Node.js
+    ejs--> Templating engine for rendering dynamic HTML
+    mongoose--> MongoDB library for Node.js
+    dotenv--> Loads environment variable from a .env file
+    body-parser--> Parses incoming request data
+Setup Folder Structure-->
+    mkdir views public routes models
+    -it will create these folders
+    touch .envm app.js
+    -it will create empty .env file and app.js
+    
