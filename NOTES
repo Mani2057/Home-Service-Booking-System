@@ -23,3 +23,9 @@ install the necessary dependencies:-->
     express-session → Maintains user sessions.
     connect-flash → Displays success/error messages.
     passport & passport-local → Handles authentication.
+commands for github:-->
+    git stauts
+    git add .
+    git add filename
+    git commit -m "Your messages "
+    git push origin main
