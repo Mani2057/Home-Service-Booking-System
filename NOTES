@@ -15,4 +15,11 @@ Setup Folder Structure-->
     -it will create these folders
     touch .envm app.js
     -it will create empty .env file and app.js
-    
+
+install the necessary dependencies:-->
+    npm install bcryptjs express-session mongoose connect-flash passport passport-local
+    meanings-->
+    bcryptjs → Hashes passwords securely.
+    express-session → Maintains user sessions.
+    connect-flash → Displays success/error messages.
+    passport & passport-local → Handles authentication.
