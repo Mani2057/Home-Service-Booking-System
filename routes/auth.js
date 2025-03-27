@@ -1,13 +1,12 @@
 const express = require("express");
 const bcrypt = require("bcryptjs");
-const passport = require("passport");
 const User = require("../models/User");
 
 const router = express.Router();
 
 // Signup Route
 router.get("/signup", (req, res) => {
-  res.render("signup");
+  res.render("signup", { message: req.flash("error") });
 });
 
 router.post("/signup", async (req, res) => {
@@ -16,13 +15,15 @@ router.post("/signup", async (req, res) => {
   try {
     let user = await User.findOne({ email });
     if (user) {
-      return res.send("User already exists");
+      req.flash("error", "User already exists!");
+      return res.redirect("/auth/signup");
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
     user = new User({ name, email, password: hashedPassword });
 
     await user.save();
+    req.flash("success", "Account created! Please log in.");
     res.redirect("/auth/login");
   } catch (err) {
     console.log(err);
@@ -32,7 +33,7 @@ router.post("/signup", async (req, res) => {
 
 // Login Route
 router.get("/login", (req, res) => {
-  res.render("login");
+  res.render("login", { message: req.flash("error") });
 });
 
 router.post("/login", async (req, res) => {
@@ -41,15 +42,17 @@ router.post("/login", async (req, res) => {
   try {
     let user = await User.findOne({ email });
     if (!user) {
-      return res.send("User not found");
+      req.flash("error", "User not found!");
+      return res.redirect("/auth/login");
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-      return res.send("Invalid credentials");
+      req.flash("error", "Invalid credentials!");
+      return res.redirect("/auth/login");
     }
 
-    req.session.user = user; // Store user session
+    req.session.user = user;
     res.redirect("/dashboard");
   } catch (err) {
     console.log(err);

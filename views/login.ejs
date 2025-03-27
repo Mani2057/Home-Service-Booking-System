@@ -1,15 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SurgiCare</title>
+    <link rel="stylesheet" href="/login.css"> <!-- Link to your CSS file -->
 </head>
 <body>
-    <h2>Login</h2>
-    <form action="/auth/login" method="POST">
-        <input type="email" name="email" placeholder="Email" required><br>
-        <input type="password" name="password" placeholder="Password" required><br>
-        <button type="submit">Login</button>
-    </form>
-    <a href="/auth/signup">Don't have an account? Sign Up</a>
+    <div class="container">
+        <div class="left-panel">
+            <h1>Hello SurgiCare! 👋</h1>
+            <p>Skip repetitive tasks and focus on what matters. Automate your workflow with ease.</p>
+        </div>
+        <div class="right-panel">
+            <h2>Welcome Back!</h2>
+            <p>Don’t have an account? <a href="/auth/signup">Create a new account</a></p>
+            
+            <% if (message) { %>
+                <p style="color:red;"><%= message %></p>
+            <% } %>
+
+            <form action="/auth/login" method="POST">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <input type="password" name="password" placeholder="Enter your password" required>
+                <button type="submit">Login Now</button>
+            </form>
+            
+            <p class="or">or sign in with</p>
+            <div class="social-buttons">
+                <button class="google-btn">Login with Google</button>
+            </div>
+            <p><a href="/auth/forgot-password">Forgot Password?</a></p>
+        </div>
+    </div>
 </body>
 </html>
