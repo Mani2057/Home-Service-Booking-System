@@ -1,117 +1,316 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Dashboard</title>
-</head>
-<body>
-    <h2>Welcome, <%= user.name %>!</h2>
-    <p>Email: <%= user.email %></p>
-
-    <h3>Available Services</h3>
-    <ul>
-        <li>Home Cleaning</li>
-        <li>Plumbing</li>
-        <li>Electrician Services</li>
-        <li>Appliance Repair</li>
-    </ul>
-
-    <a href="/auth/logout">Logout</a>
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Home Service Booking</title>
-    <link rel="stylesheet" href="/dashboard.css"> <!-- Custom CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - Home Service Booking</title>
+  <link rel="stylesheet" href="/dashboard.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  
+   
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Home Service Booking</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Dashboard</a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-danger text-white" href="/auth/logout">Logout</a>
-                    </li>
-                </ul>
-            </div>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+  <div class="container-fluid px-4">
+    <a class="navbar-brand" href="#">
+      <img src="/images/logo.png" alt="Logo" height="40"/>
+    </a>
+    <div class="d-flex align-items-center ms-auto">
+      <a href="#" class="nav-link"><i class="bi bi-telephone-fill"></i></a>
+      <a class="btn btn-success ms-2" href="/auth/logout">Login/Signup</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero d-flex align-items-center">
+  <div class="container d-flex justify-content-between flex-wrap">
+    <div class="hero-content">
+      <h1 class="fw-bold">Expert Professional Home Services,<br/>Book Online</h1>
+      <p>Service On Wheel helps you live smarter, giving you time to focus what's most important.</p>
+      <a href="/contact" class="btn btn-light text-dark">Contact Us</a>
+    </div>
+    <div>
+      <img src="hero1.png" alt="Cleaning Guy" class="img-fluid"/>
+    </div>
+  </div>
+</section>
+<!-- Location & Search -->
+<div class="location-wrapper">
+    <div class="container">
+      <div class="location-search d-flex align-items-center mb-4">
+        <select class="form-select w-auto">
+          <option selected>Nagpur</option>
+        </select>
+        <input type="text" class="form-control search-input" placeholder="Search for a service e.g. Air Conditioner, Kitchen Chimney...">
+      </div>
+    </div>
+  </div>
+
+<!-- Service Icons Section -->
+<div class="services-icons container text-center mb-4">
+  <div class="row row-cols-4 row-cols-md-8 g-3">
+    <div class="icon-box">
+      <img src="airconditioner.png" alt="AC">
+      <p class="mt-2">Air Conditioner</p>
+    </div>
+    <div class="icon-box">
+      <img src="driver.png" alt="Driver">
+      <p>Driver on Demand</p>
+    </div>
+    <div class="icon-box">
+      <img src="mobile.png" alt="Mobile Repair">
+      <p>Mobile Repair</p>
+    </div>
+    <div class="icon-box">
+      <img src="fridge.png" alt="Fridge">
+      <p>Refrigerator</p>
+    </div>
+    <div class="icon-box">
+      <img src="washing-machine.png" alt="Washing Machine">
+      <p>Washing Machine</p>
+    </div>
+    <div class="icon-box">
+      <img src="microwave.png" alt="Microwave">
+      <p>Microwave</p>
+    </div>
+    <div class="icon-box">
+      <img src="water-purifier.png" alt="Water Purifier">
+      <p>Water Purifier</p>
+    </div>
+    <div class="icon-box">
+      <img src="chimney.webp" alt="Kitchen Chimney">
+      <p>Kitchen Chimney</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- Service Icons Section -->
+<section class="service-icons-section">
+    <div class="service-container">
+  
+      <!-- Card 1 -->
+      <div class="service-card" style="background-color: #d1e4ed;">
+        <div class="service-text">
+          <h3>Looking for<br><strong>Fridge Repair Expert?</strong><br>Now</h3>
+          <a href="#" class="book-now">Book Now ➜</a>
         </div>
-    </nav>
-
-    <!-- User Info Section -->
-    <div class="user-info text-center mt-5 pt-4">
-        <h2>We lcome, <%= user.name %>!</h2>
-        <p>Email: <%= user.email %></p>
-    </div>
-
-    <!-- Background Banner -->
-    <div class="background-banner">
-        <h3 class="banner-text">Book Reliable Home Services Now!</h3>
-        <a class="nav-link btn btn-warning text-dark" href="/contact">Contact Us</a>
-    </div>
-
-    <!-- Available Services Section -->
-    <div class="container mt-5">
-        <h3 class="text-center mb-4">Available Services</h3>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <h5 class="card-title">Home Cleaning</h5>
-                        <p class="card-text">Get your home cleaned by professionals.</p>
-                        <a href="#" class="btn btn-primary">Book Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <h5 class="card-title">Plumbing</h5>
-                        <p class="card-text">Fix plumbing issues with expert plumbers.</p>
-                        <a href="#" class="btn btn-primary">Book Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <h5 class="card-title">Electrician Services</h5>
-                        <p class="card-text">Solve electrical problems with skilled electricians.</p>
-                        
-                        <a href="#" class="btn btn-primary">book now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <h5 class="card-title">Appliance Repair</h5>
-                        <p class="card-text">Get your appliances repaired by experts.</p>
-                        <a href="#" class="btn btn-primary">Book Now</a>
-                    </div>
-                </div>
-            </div>
+        <img src="serv1.png" alt="Fridge" class="service-img">
+      </div>
+  
+      <!-- Card 2 -->
+      <div class="service-card" style="background-color: #e6f1fb;">
+        <div class="service-text">
+          <h3><strong>AC Servicing</strong></h3>
+          <p>Ac Service repair<br>at your doorstep</p>
+          <a href="#" class="book-now">Book Now ➜</a>
         </div>
+        <img src="serv2.png" alt="AC" class="service-img">
+      </div>
+  
+      <!-- Card 3 -->
+      <div class="service-card" style="background-color: #dff3e2;">
+        <div class="service-text">
+          <h3><strong>Need For Electrician</strong></h3>
+          <p>Electric Service<br>at your doorstep</p>
+          <a href="#" class="book-now">Book Now ➜</a>
+        </div>
+        <img src="serv3.png" alt="Electrician" class="service-img">
+      </div>
+  
+      <!-- Card 4 -->
+      <div class="service-card" style="background-color: #fdecea;">
+        <div class="service-text">
+          <h3><strong>Beauty Expert</strong></h3>
+          <p>beauty salon Service<br>at your doorstep</p>
+          <a href="#" class="book-now">Book Now ➜</a>
+        </div>
+        <img src="serv4.png" alt="Beauty" class="service-img">
+      </div>
+  
     </div>
+  </section>
+  
 
-    <!-- Footer -->
-    <footer class="footer mt-5 p-3 text-center text-white">
-        &copy; 2025 Home Service Booking | All Rights Reserved
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- How It Works Section -->
+<section class="how-it-works-section">
+    <div class="container">
+      <h2 class="how-title">How it works</h2>
+      <p class="how-subtitle">3 simple steps to Trukky freedom</p>
+  
+      <div class="how-steps">
+        <!-- Step 1 -->
+        <div class="how-step">
+          <img src="step1.png" alt="Book Online" class="how-icon">
+          <p class="how-text">
+            <span class="step-number">Step 1</span><br>
+            Book Online or Phone
+          </p>
+        </div>
+  
+        <img src="arrow.png" alt="arrow" class="how-arrow">
+  
+        <!-- Step 2 -->
+        <div class="how-step">
+          <img src="step2.png" alt="Booking SMS" class="how-icon">
+          <p class="how-text">
+            <span class="step-number">Step 2</span><br>
+            Get Booking Details Via SMS
+          </p>
+        </div>
+  
+        <img src="arrow.png" alt="arrow" class="how-arrow">
+  
+        <!-- Step 3 -->
+        <div class="how-step">
+          <img src="step3.png" alt="Payment" class="how-icon">
+          <p class="how-text">
+            <span class="step-number">Step 3</span><br>
+            Pay After Work is Done
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<!-- Washing Machine Issue Section -->
+<section class="washing-machine-section">
+    <div class="wm-container">
+      <div class="wm-header">
+        <h2>Washing machine</h2>
+        <p>
+          There are only two times that your washing machine will talk to you: when it’s done and when it
+          needs help, so don't worry we are here !!!!!!!
+        </p>
+        <a href="#" class="view-all">View All Services ➜</a>
+      </div>
+  
+      <div class="wm-grid">
+        <!-- Issue 1 -->
+        <a href="display-issue.html" class="wm-card-link">
+          <div class="wm-card">
+            <img src="issue1.jpg" alt="Display Issue">
+            <p><strong>display issue</strong></p>
+          </div>
+        </a>
+  
+        <!-- Issue 2 -->
+        <a href="water-drain-issue.html" class="wm-card-link">
+          <div class="wm-card">
+            <img src="issue2.jpg" alt="Water Drain Issue">
+            <p><strong>Water drain issue</strong></p>
+          </div>
+        </a>
+  
+        <!-- Issue 3 -->
+        <a href="tub-rotation-issue.html" class="wm-card-link">
+          <div class="wm-card">
+            <img src="issue3.jpg" alt="Tub Rotation Issue">
+            <p><strong>Tub rotation issue</strong></p>
+          </div>
+        </a>
+  
+        <!-- Issue 4 -->
+        <a href="no-power-issue.html" class="wm-card-link">
+          <div class="wm-card">
+            <img src="issue4.jpg" alt="No Power Issue">
+            <p><strong>No Power issue</strong></p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+
+
+<!-- Beauty Salon Section -->
+<section class="beauty-salon-section">
+    <div class="beauty-salon-container">
+      <div class="beauty-salon-header">
+        <div class="beauty-salon-title">
+          <h2>Beauty salon</h2>
+          <p>“The greatest gift you can give yourself is a little bit of your own attention,
+            Because Sometimes all we need is a little pampering to help us feel better”</p>
+        </div>
+        <a href="#" class="view-all-link">
+          View All Services →
+        </a>
+      </div>
+  
+      <div class="beauty-salon-cards">
+        <a href="#" class="beauty-card">
+          <img src="pedicure.jpg" alt="Pedicure">
+          <p>Pedicure</p>
+        </a>
+        <a href="#" class="beauty-card">
+          <img src="facial.jpg" alt="Facials and Cleanups">
+          <p>facials and cleanups</p>
+        </a>
+        <a href="#" class="beauty-card">
+          <img src="salon.jpg" alt="Classic Salon">
+          <p>Classic Salon</p>
+        </a>
+        <a href="#" class="beauty-card">
+          <img src="haircare.jpg" alt="Hair Care">
+          <p>Hair Care</p>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+
+
+
+<!-- Beauty Salon Section -->
+<section class="beauty-salon-section">
+    <div class="beauty-salon-container">
+      <div class="beauty-salon-header">
+        <div class="beauty-salon-title">
+          <h2>Carpenter</h2>
+          <p>“
+            Our Carpentry work is the Illusion of Perfection!!!!”</p>
+        </div>
+        <a href="#" class="view-all-link">
+          View All Services →
+        </a>
+      </div>
+  
+      <div class="beauty-salon-cards">
+        <a href="#" class="beauty-card">
+          <img src="cuboard.jpg" alt="Pedicure">
+          <p>cuboard & Drawer</p>
+        </a>
+        <a href="#" class="beauty-card">
+          <img src="repair.jpg" alt="Facials and Cleanups">
+          <p>Repair</p>
+        </a>
+        <a href="#" class="beauty-card">
+          <img src="installation.jpg" alt="Classic Salon">
+          <p>Installation</p>
+        </a>
+        <a href="#" class="beauty-card">
+          <img src="suppliers.jpg" alt="Hair Care">
+          <p>Hardware material suppliers</p>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+
+
+
+
+
+
+<!-- Footer -->
+<footer class="footer mt-5 p-3 text-center text-white">
+  &copy; 2025 Home Service Booking | All Rights Reserved
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
