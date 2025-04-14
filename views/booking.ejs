@@ -1,0 +1,23 @@
+<!-- views/booking.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book Now</title>
+</head>
+<body>
+  <h1>Booking Form</h1>
+ 
+  <form action="/booking" method="POST">
+    <label>Name:</label><br>
+    <input type="text" name="name" required><br>
+
+    <label>Address:</label><br>
+    <input type="text" name="address" required><br>
+
+    <label>Timing:</label><br>
+    <input type="datetime-local" name="timing" required><br><br>
+
+    <button type="submit">Confirm Booking</button>
+  </form>
+</body>
+</html>
