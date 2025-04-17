@@ -1,6 +1,5 @@
 // models/Booking.js
 const mongoose = require("mongoose");
-
 const bookingSchema = new mongoose.Schema({
   name: String,
   address: String,
@@ -10,5 +9,7 @@ const bookingSchema = new mongoose.Schema({
     ref: "User"
   }
 });
-
 module.exports = mongoose.model("Booking", bookingSchema);
+
+
+

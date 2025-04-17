@@ -1,7 +1,39 @@
 body {
     font-family: 'Segoe UI', sans-serif;
   }
-/* for user icon */
+
+  /* for navbar */
+  .navbar {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-link:hover,
+  .user-icon:hover {
+    color: #0d6efd !important;
+  }
+
+  .user-info-box {
+    animation: fadeIn 0.3s ease;
+  }
+  /* Fixed wrapper for logo - doesn't affect nav height */
+.logo-wrapper {
+  height: 40px;
+  overflow: hidden;
+}
+
+/* Enlarge logo inside without stretching nav */
+.logo-img {
+  height: 100px; /* Larger than wrapper */
+  width: 100px;
+  object-fit: contain;
+  position: relative;
+  top:0px; /* Shift upward to stay centered */
+}
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+/* for user icon
   .user-container {
     position: relative;
     display: inline-block;
@@ -12,7 +44,7 @@ body {
   .user-icon {
     font-size: 40px;
     cursor: pointer;
-    color: #0e0af9;
+    color: #f67620;
   }
 
   .user-info-box {
@@ -43,27 +75,48 @@ body {
     margin: 5px 0;
     font-size: 14px;
     color: #444;
-  }
+  } */
 
   /* Optional: Auto-close dropdown on click outside */
   body {
     position: relative;
   }
 
-  .logo-img {
-    height: 20px;
-    width: auto;
-    
-  }
+ 
 
   .hero {
-    background-color: #00a779;
-    color: white;
-    padding: 80px 20px 100px; /* increase bottom padding */
+    background: linear-gradient(135deg, #f97523, #f97523); /* subtle gradient */
+    color: #fff;
+    padding: 100px 20px 120px;
+    text-align: left;
     position: relative;
+    overflow: hidden;
+  }
+
+  /* Decorative background elements (optional) */
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    left: -80px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    z-index: 0;
   }
   
-
+  .hero::after {
+    content: "";
+    position: absolute;
+    bottom: -80px;
+    right: -60px;
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    z-index: 0;
+  }
   .hero-content {
     max-width: 600px;
   }

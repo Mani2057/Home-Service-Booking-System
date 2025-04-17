@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const flash = require("connect-flash");
 require("dotenv").config();
+const contactRouter = require('./routes/contact');
 
 const app = express();
 
@@ -22,10 +23,12 @@ app.use(session({
 app.use(flash());
 
 // Routes (after session middleware)
+
 app.use("/auth", require("./routes/auth"));
 app.use("/dashboard", require("./routes/dashboard"));
 app.use("/booking", require("./routes/booking"));
 app.use("/my-bookings", require("./routes/my-bookings"));
+app.use('/contact', contactRouter);
 
 const db=process.env.MONGO_URI ;
 // ||'mongodb://localhost:27017/yourDatabase'

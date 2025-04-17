@@ -23,7 +23,7 @@ router.post("/signup", async (req, res) => {
     user = new User({ name, email, password: hashedPassword });
 
     await user.save();
-    req.flash("success", "Account created! Please log in.");
+    req.flash("success", "Account created!");
     res.redirect("/auth/login");
   } catch (err) {
     console.log(err);

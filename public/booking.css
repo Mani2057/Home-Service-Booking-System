@@ -1,0 +1,73 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .booking-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .booking-card h2 {
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  label {
+    font-weight: 600;
+  }
+
+  .form-control {
+    border-radius: 12px;
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+
+  .btn-submit {
+    background: linear-gradient(to right, #667eea, #764ba2);
+    color: #fff;
+    font-weight: 600;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    width: 100%;
+    transition: background 0.3s ease;
+  }
+
+  .btn-submit:hover {
+    background: linear-gradient(to right, #5a67d8, #6b46c1);
+  }
+
+  .back-btn {
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #6c757d;
+  }
+
+  .back-btn:hover {
+    color: #343a40;
+  }
+
+  .spinner {
+    display: none;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  .spinner-border {
+    width: 2rem;
+    height: 2rem;
+  }
